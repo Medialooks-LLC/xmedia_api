@@ -1,0 +1,21 @@
+{
+    "container_items":[
+        {
+            "name":"playlist_player",
+            "open_url":"playlist_place_holder",
+            "subtype":"playlist_player",
+            "wrappers":[
+                {
+                    "correction_side":"output",
+                    "wrapper_type":"times_corrector"
+                }
+            ]
+        },
+        {
+            "name":"ndi_out",
+            "open_url":"ndi://handler_with_ndi_output",
+            "subtype":"ndi_renderer"
+        }
+    ],
+    "subtype":"serial_container"
+}

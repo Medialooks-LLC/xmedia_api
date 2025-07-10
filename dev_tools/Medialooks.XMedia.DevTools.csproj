@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <UsingCMake Condition="'$(USING_CMAKE)' == '1'">true</UsingCMake>
+    <UsingCMake Condition="'$(UsingCMake)' == ''">false</UsingCMake>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyName>Medialooks.XMedia.DevTools</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+    <OutputPath Condition="'$(UsingCMake)' != 'true'">../build_output/$(Configuration)/</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(UsingCMake)' != 'true'">
+    <ProjectReference Include="../src/Medialooks.XMedia.csproj">
+      <Name>Medialooks.XMedia</Name>
+      <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UsingCMake)' == 'true'">
+    <ProjectReference Include="../../../src/csharp/Medialooks.XMedia.csproj">
+      <Name>Medialooks.XMedia</Name>
+      <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+    </ProjectReference>
+  </ItemGroup>
+
+
+</Project>

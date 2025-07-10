@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialooks.XMedia", "src\Medialooks.XMedia.csproj", "{C54204CD-2324-4EE2-A80F-E6417B5B5681}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialooks.XMedia.DevTools", "dev_tools\Medialooks.XMedia.DevTools.csproj", "{4CBF86E5-90A8-4DC7-A873-4002F015FC6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialooks.XMedia.Samples.FrameCallback", "frame_callback\Medialooks.XMedia.Samples.FrameCallback.csproj", "{4D7590F3-911F-4A3C-BFB8-EF09F678FCD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialooks.XMedia.Samples.PlaylistPlayer", "playlist_player\Medialooks.XMedia.Samples.PlaylistPlayer.csproj", "{62D52346-6A84-4086-96AA-6BD08CA68593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialooks.XMedia.Samples.PutFrames", "put_frames\Medialooks.XMedia.Samples.PutFrames.csproj", "{6FBE0ED4-7867-450E-BE28-B1C88164E08D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialooks.XMedia.Samples.RunScheme", "run_scheme\Medialooks.XMedia.Samples.RunScheme.csproj", "{DF7E82AA-D789-4F51-A64C-A20CCCCA7FA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C54204CD-2324-4EE2-A80F-E6417B5B5681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54204CD-2324-4EE2-A80F-E6417B5B5681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54204CD-2324-4EE2-A80F-E6417B5B5681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54204CD-2324-4EE2-A80F-E6417B5B5681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CBF86E5-90A8-4DC7-A873-4002F015FC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CBF86E5-90A8-4DC7-A873-4002F015FC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CBF86E5-90A8-4DC7-A873-4002F015FC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CBF86E5-90A8-4DC7-A873-4002F015FC6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D7590F3-911F-4A3C-BFB8-EF09F678FCD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D7590F3-911F-4A3C-BFB8-EF09F678FCD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D7590F3-911F-4A3C-BFB8-EF09F678FCD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D7590F3-911F-4A3C-BFB8-EF09F678FCD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D52346-6A84-4086-96AA-6BD08CA68593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D52346-6A84-4086-96AA-6BD08CA68593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D52346-6A84-4086-96AA-6BD08CA68593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D52346-6A84-4086-96AA-6BD08CA68593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FBE0ED4-7867-450E-BE28-B1C88164E08D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FBE0ED4-7867-450E-BE28-B1C88164E08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FBE0ED4-7867-450E-BE28-B1C88164E08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FBE0ED4-7867-450E-BE28-B1C88164E08D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF7E82AA-D789-4F51-A64C-A20CCCCA7FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF7E82AA-D789-4F51-A64C-A20CCCCA7FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF7E82AA-D789-4F51-A64C-A20CCCCA7FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF7E82AA-D789-4F51-A64C-A20CCCCA7FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

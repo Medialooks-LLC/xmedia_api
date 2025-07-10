@@ -1,0 +1,86 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('OSX'))">
+    <DefineConstants>MACOS</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+    <DefineConstants>WINDOWS</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Linux'))">
+    <DefineConstants>LINUX</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <UsingCMake Condition="'$(USING_CMAKE)' == '1'">true</UsingCMake>
+    <UsingCMake Condition="'$(UsingCMake)' == ''">false</UsingCMake>
+    <!--<ResPath Condition="$(Configuration) == 'Debug'">Debug</ResPath>
+    <ResPath Condition="$(Configuration) != 'Debug'">RelWithDebInfo</ResPath>-->
+    <ResPath>Release</ResPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyName>Medialooks.XMedia</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <OutputPath Condition="'$(UsingCMake)' != 'true'">../build_output/$(Configuration)\</OutputPath>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(UsingCMake)' != 'true' AND $([MSBuild]::IsOSPlatform('OSX'))">
+    <Content Include="../lib/macos/$(ResPath)/*.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="../lib/macos/3rd_party/$(ResPath)/*.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="../lib/macos/$(ResPath)/*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UsingCMake)' != 'true' AND $([MSBuild]::IsOSPlatform('Windows'))">
+  <Content Include="../lib/windows/$(ResPath)/*.dll">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+  <Content Include="../lib/windows/$(ResPath)/*.pdb">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+  <Content Include="../lib/windows/3rd_party/$(ResPath)/*.dll">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+  <Content Include="../lib/windows/3rd_party/$(ResPath)/*.pdb">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+  <Content Include="../lib/windows/$(ResPath)/*.json">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+  </ItemGroup>
+                                       	
+  <ItemGroup Condition="'$(UsingCMake)' != 'true' AND $([MSBuild]::IsOSPlatform('Linux'))">
+    <Content Include="../lib/linux/$(ResPath)/*.so*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="../lib/linux/3rd_party/$(ResPath)/*.so*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="../lib/linux/$(ResPath)/*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Target Name="PrintVars" BeforeTargets="Build">
+    <Message Text="[DEBUG] UsingCMake = $(UsingCMake)" Importance="high"/>
+    <Message Text="[DEBUG] OutputPath = $(OutputPath)" Importance="high"/>
+    <Message Text="[DEBUG] ResPath = $(ResPath)" Importance="high"/>
+  </Target>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;8500</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;8500</NoWarn>
+  </PropertyGroup>
+</Project>

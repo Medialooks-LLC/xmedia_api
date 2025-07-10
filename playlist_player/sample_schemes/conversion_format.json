@@ -1,0 +1,15 @@
+{
+    "audio_format":{
+        "channels":2,
+        "sample_rate":32000,
+        "type":"Audio"
+    },
+    "video_format":{
+        "field_order":"Progressive",
+        "frame_rate":50,
+        "height":720,
+        "pixel_format":"yuv420p",
+        "type":"Video",
+        "width":1280
+    }
+}

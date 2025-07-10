@@ -1,0 +1,34 @@
+{
+    "container_items": [{
+            "name": "my_demux_name",
+            "open_url": "E:/Media/audi.mp4",
+            "subtype": "av_demultiplexer"
+        }, {
+            "type": "kDecoder",
+            "wrappers": [{
+                    "wrapper_type": "multistream"
+                }]
+        }, {
+            "init_props": {
+                "audio": {
+                    "av_codec_name": "libmp3lame",
+                    "b": "192K"
+                },
+                "video": {
+                    "av_codec_name": "mpeg4",
+                    "b": "10M"
+                }
+            },
+            "subtype": "av_encoder",
+            "wrappers": [{
+                    "wrapper_type": "multistream"
+                }]
+        }, {
+
+                    "name": "muxer_1_name",
+                    "open_url": "E:/Media/!Temp/xmedia_c_sample.mp4",
+                    "subtype": "av_multiplexer"
+
+        }],
+    "subtype": "serial_container"
+}

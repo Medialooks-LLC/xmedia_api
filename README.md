@@ -1,73 +1,15 @@
-readme: |
+
   # Medialooks.XMedia C# API Wrapper
 
   This project provides a modern C# wrapper around the native [Medialooks XMedia](https://github.com/Medialooks-LLC/xmedia) C++ library. It enables powerful cross-platform media processing capabilities in .NET applications by exposing a managed interface for working with audio/video frames, packets, handlers, and callbacks.
-
-<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .label {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      fill: #333;
-      text-anchor: middle;
-    }
-    .shadow {
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-    }
-  </style>
-  <rect width="100%" height="100%" fill="#f9fafb"/>
-
-<svg width="1000" height="500" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .label {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      fill: #333;
-      text-anchor: middle;
-    }
-    .shadow {
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-    }
-  </style>
-  <rect width="100%" height="100%" fill="#f9fafb"/>
-
-  <!-- Top Box -->
-  <rect x="350" y="30" rx="16" ry="16" width="300" height="70" fill="#dbeafe" class="shadow"/>
-  <text x="500" y="60" class="label" font-weight="bold">xMedia (C++ Library)</text>
-  <text x="500" y="82" class="label">Core Implementation</text>
-
-  <!-- Middle Box -->
-  <rect x="350" y="130" rx="16" ry="16" width="300" height="70" fill="#dcfce7" class="shadow"/>
-  <text x="500" y="160" class="label" font-weight="bold">xMedia API Wrappers</text>
-  <text x="500" y="182" class="label">C# / Python / Other Bindings</text>
-
-  <!-- Connectors -->
-  <line x1="500" y1="100" x2="500" y2="130" stroke="#cbd5e1" stroke-width="2"/>
-  <line x1="500" y1="200" x2="300" y2="260" stroke="#cbd5e1" stroke-width="2"/>
-  <line x1="500" y1="200" x2="500" y2="260" stroke="#cbd5e1" stroke-width="2"/>
-  <line x1="500" y1="200" x2="700" y2="260" stroke="#cbd5e1" stroke-width="2"/>
-
-  <!-- Bottom Left -->
-  <rect x="200" y="260" rx="16" ry="16" width="200" height="70" fill="#f1f5f9" class="shadow"/>
-  <text x="300" y="300" class="label">C# Applications</text>
-
-  <!-- Bottom Center -->
-  <rect x="400" y="260" rx="16" ry="16" width="200" height="70" fill="#f1f5f9" class="shadow"/>
-  <text x="500" y="300" class="label">Python Applications</text>
-
-  <!-- Bottom Right -->
-  <rect x="600" y="260" rx="16" ry="16" width="200" height="70" fill="#f1f5f9" class="shadow"/>
-  <text x="700" y="300" class="label">Other Application</text>
-</svg>
-
 
   ## About XMedia
 
   **xMedia** is a professional, multi-platform video SDK designed for developers who require high-performance media workflows on Windows, macOS, and Linux.
 
-  To learn more about the SDK and its roadmap, visit:
-  [https://medialooks.com/xmedia-sdk](https://medialooks.com/xmedia-sdk)
-  [xMedia C++ API] [https://medialooks-llc.github.io/xmedia/]
+  [Checkout the development roadmap](https://medialooks.com/xmedia-sdk)
+
+  [xMedia C++ API docs](https://medialooks-llc.github.io/xmedia/)
 
   ## Features
 

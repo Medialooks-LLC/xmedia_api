@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:OpenGLAvalonia"
+		xmlns:components="clr-namespace:OpenGLAvalonia.Components"
+        x:Class="OpenGLAvalonia.ConversionSettingsDialog"
+        Title="Media Settings"
+        Width="400"
+        Height="330"
+        WindowStartupLocation="CenterOwner">
+    
+    <Grid RowDefinitions="*,Auto">
+		<components:ConversionSettingsControl Grid.Row="0" x:Name="SettingsControl" />
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="10">
+            <Button Content="Apply" Click="OnOkClicked" IsDefault="True" Width="80" HorizontalContentAlignment="Center"/>
+            <Button Content="Cancel" Click="OnCancelClicked" IsCancel="True" Width="80" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>

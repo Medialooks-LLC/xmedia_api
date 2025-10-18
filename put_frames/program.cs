@@ -18,6 +18,7 @@ public class TimerProcessor
         public Int64 FrameDuration { get; set; }
         required public XmHandler Container { get; set; }
         public int CountCalls { get; set; }
+        public int MaxCountCalls { get; set; }
         public bool HasError { get; set; }
         public bool IsRunning { get; set; }
     }
@@ -26,7 +27,8 @@ public class TimerProcessor
     {
         var error = new Error();
         var timerData = (CBTimerData)userData;
-        if (timerData.CountCalls == 299) { 
+        if (timerData.CountCalls > timerData.MaxCountCalls)
+        {
             timerData.IsRunning = false;
             return -1;
         }
@@ -59,7 +61,7 @@ public class TimerProcessor
         return timerData.StartTime + udata.CountCalls * timerData.FrameDuration;
     };
 
-    public static void ProcessSchemeFile(string filePath)
+    public static void ProcessSchemeFile(string filePath, int maxFrames)
     {
         if (string.IsNullOrWhiteSpace(filePath))
         {
@@ -100,6 +102,7 @@ public class TimerProcessor
             StartTime = XmClockTime(null) + 40 * 10000,
             Container = container,
             CountCalls = 0,
+            MaxCountCalls = maxFrames,
             FrameDuration = 40 * 10000, // 40 msec
             HasError = false,
             IsRunning = true
@@ -115,15 +118,15 @@ public class TimerProcessor
         }
 
 
-            int i = 0;
-            while (timerData.IsRunning)
-            {
-                Thread.Sleep(1000);
-                i++;
-                Console.WriteLine($"Waiting... ({i} second). Passed {timerData.CountCalls} frames.");
-            }
-            TimerCallbackStop(callback, ref error);
-            TimerCallbackRelease(callback);
+        int i = 0;
+        while (timerData.IsRunning)
+        {
+            Thread.Sleep(1000);
+            i++;
+            Console.WriteLine($"Waiting... ({i} second). Passed {timerData.CountCalls} frames.");
+        }
+        TimerCallbackStop(callback, ref error);
+        TimerCallbackRelease(callback);
 
         XmHandlerClose(container);
         XmHandlerRelease(container);
@@ -141,17 +144,17 @@ class Program
             if (args.Length == 0)
             {
                 var execName = AppDomain.CurrentDomain.FriendlyName;
-                Console.WriteLine($"Usage: {execName} <scheme_file_path>");
-                Console.WriteLine($"Example: {execName} ./schemes/xm_encode_to_file.json");
+                Console.WriteLine($"Usage: {execName} <scheme_file_path> [num_frames]");
+                Console.WriteLine($"Example: {execName} ./schemes/xm_encode_to_file.json 100");
                 return 1;
             }
 
-            var filePath = args[0];//@"E:/work/xmedia_api/build/bin/Debug/schemes/xm_encode_to_file.json";
-            var timeout = args.Length > 1 && int.TryParse(args[1], out int seconds) ? seconds : 5;
+            var filePath = args[0];
+            var maxFrames = args.Length > 1 && int.TryParse(args[1], out int frames) ? frames : 300;
 
             Console.WriteLine($"Executing scheme from file: {filePath}");
 
-            TimerProcessor.ProcessSchemeFile(filePath);
+            TimerProcessor.ProcessSchemeFile(filePath, maxFrames);
 
             Console.WriteLine("Processing completed.");
             return 0;

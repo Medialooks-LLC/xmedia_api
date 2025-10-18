@@ -36,7 +36,7 @@
     <Content Include="../lib/macos/3rd_party/$(ResPath)/*.dylib">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="../lib/macos/$(ResPath)/*.json">
+    <Content Include="../lib/macos/3rd_party/$(ResPath)/*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -54,7 +54,7 @@
   <Content Include="../lib/windows/3rd_party/$(ResPath)/*.pdb">
     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
-  <Content Include="../lib/windows/$(ResPath)/*.json">
+  <Content Include="../lib/windows/3rd_party/$(ResPath)/*.json">
     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
   </ItemGroup>
@@ -66,7 +66,7 @@
     <Content Include="../lib/linux/3rd_party/$(ResPath)/*.so*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="../lib/linux/$(ResPath)/*.json">
+    <Content Include="../lib/linux/3rd_party/$(ResPath)/*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

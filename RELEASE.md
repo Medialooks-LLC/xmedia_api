@@ -6,9 +6,9 @@ cd xmedia
 ```
 ###### Checkout sources:
 ```shell
-git clone https://github.com/Medialooks-LLC/xmedia_api.git . --branch=v1.0.1.1
+git clone https://github.com/Medialooks-LLC/xmedia_api.git . --branch=v1.0.1.2-beta
 ```
-###### Extract binaries from `https://github.com/Medialooks-LLC/xmedia_api/releases/download/v1.0.1.1/xmedia-api-1.0.1.1-windows.zip` to `lib` folder.
+###### Extract binaries from `https://github.com/Medialooks-LLC/xmedia_api/releases/download/v1.0.1.2-beta/xmedia-api-1.0.1.2-beta-windows.zip` to `lib` folder.
 ###### Build project:
 Open solution `XMedia.sln` in Visual Studio 2022+ and build solution with it.
 
@@ -34,12 +34,12 @@ mkdir -p xmedia && cd xmedia
 ```
 ###### Checkout sources:
 ```shell
-git clone https://github.com/Medialooks-LLC/xmedia_api.git . --branch=v1.0.1.1
+git clone https://github.com/Medialooks-LLC/xmedia_api.git . --branch=v1.0.1.2-beta
 ```
-###### Download and extract binaries from `https://github.com/Medialooks-LLC/xmedia_api/releases/download/v1.0.1.1/xmedia-api-1.0.1.1-linux.tar.gz` to `lib` folder.
+###### Download and extract binaries from `https://github.com/Medialooks-LLC/xmedia_api/releases/download/v1.0.1.2-beta/xmedia-api-1.0.1.2-beta-linux.tar.gz` to `lib` folder.
 ```shell script
-wget https://github.com/Medialooks-LLC/xmedia_api/releases/download/v1.0.1.1/xmedia-api-1.0.1.1-linux.tar.gz
-tar xvfz xmedia-api-1.0.1.1-linux.tar.gz -C lib/
+wget https://github.com/Medialooks-LLC/xmedia_api/releases/download/v1.0.1.2-beta/xmedia-api-1.0.1.2-beta-linux.tar.gz
+tar xvfz xmedia-api-1.0.1.2-beta-linux.tar.gz -C lib/
 ```
 ###### Build project:
 

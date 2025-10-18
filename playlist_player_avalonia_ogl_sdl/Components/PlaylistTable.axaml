@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:local="clr-namespace:OpenGLAvalonia.Components"
+             x:Class="OpenGLAvalonia.Components.PlaylistTable"
+			 MaxWidth="600">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<!-- Files table -->
+		<DataGrid x:Name="PlaylistDataGrid" ItemsSource="{Binding PlaylistItems}" CanUserSortColumns="False" AutoGenerateColumns="False" Margin="0,0,0,10">
+			<DataGrid.Columns>
+				<!--<DataGridTextColumn Header="#" Binding="{Binding Pos}"/>-->
+				<DataGridTextColumn Header="Start Time" Binding="{Binding FixedPosSec}"/>
+				<DataGridTextColumn Header="File / Command" Binding="{Binding OpenUrl}"/>
+				<DataGridTextColumn Header="In / Param" Binding="{Binding InSec}"/>
+				<DataGridTextColumn Header="Out" Binding="{Binding OutSec}"/>
+				<DataGridCheckBoxColumn Header="Is Break" Binding="{Binding IsBreak}"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		<Grid Grid.Row="1" ColumnDefinitions="auto,*,auto">
+			<TextBlock Grid.Column="0" VerticalAlignment="Center" Margin="2">Background:</TextBlock>
+			<TextBox Name="BackgroundFile" Grid.Column="1" Margin="2" IsReadOnly="True" Text="{Binding PlaylistBackground}"></TextBox>
+			<Button Name="SetBackgroundButton" Grid.Column="2" Margin="2" Click="SetBackground_Click">Set</Button>
+		</Grid>
+		<!-- Control buttons -->
+		<StackPanel Grid.Row="2" Orientation="Horizontal">
+			<Button Name="AddFileButton" Content="Add File" Margin="2" Click="AddFile_Click"/>
+			<Button Content="Add URL" IsEnabled="False" Margin="2" Click="AddUrl_Click"/>
+			<Button Content="Add Live" IsEnabled="False" Margin="2" Click="AddLive_Click"/>
+			<Button Content="Add List" IsEnabled="False" Margin="2" Click="AddList_Click"/>
+			<Button Content="Add Ref" IsEnabled="False" Margin="2" Click="AddRef_Click"/>
+			<Button Content="Add Cmd" IsEnabled="False" Margin="2" Click="AddCmd_Click"/>
+			<Button Name="DelFileButton" Content="Del" Margin="2" Click="Delete_Click"/>
+			<Button Name="MoveUpButton" Content="▲" Margin="2" Click="MoveUp_Click"/>
+			<Button Name="MoveDownButton" Content="▼" Margin="2" Click="MoveDown_Click"/>
+		</StackPanel>
+	</Grid>
+</UserControl>

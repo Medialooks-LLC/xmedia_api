@@ -78,6 +78,34 @@ public class FrameProcessor
                     ""type"": ""kDecoder"",
                     ""name"": ""my_decoder"",
                     ""wrappers"": [{ ""wrapper_type"": ""multistream"" }]
+                },
+                {
+                  ""init_props"": {
+                    ""audio"": {
+                      ""audio_format"": {
+                        ""channels"": 2,
+                        ""sample_rate"": 32000,
+                        ""type"": ""Audio""
+                      }
+                    },
+                    ""video"": {
+                      ""video_format"": {
+                        ""field_order"": ""Progressive"",
+                        ""frame_rate"": 50,
+                        ""height"": 720,
+                        ""pixel_format"": ""yuv420p"",
+                        ""type"": ""Video"",
+                        ""width"": 1280
+                      }
+                    }
+                  },
+                  ""subtype"": ""av_converter"",
+                  ""name"":  ""my_converter"",
+                  ""wrappers"": [
+                    {
+                      ""wrapper_type"": ""multistream""
+                    }
+                  ]
                 }
             ],
             ""subtype"": ""serial_container""
@@ -93,7 +121,6 @@ public class FrameProcessor
 
         try
         {
-            var decoder = XmHandlerOpen(container, "my_decoder");
             var stats = new FrameProcessingStats()
             {
                 ContinueFrameReceiving = true,
@@ -103,7 +130,7 @@ public class FrameProcessor
             };
 
             var callback = FrameCallbackAdd(
-                decoder,
+                container,
                 ObjectType.FrameVideo,
                 null,
                 ref stats,

@@ -1,0 +1,48 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:components="clr-namespace:OpenGLAvalonia.Components"
+        xmlns:local="clr-namespace:OpenGLAvalonia.Views"
+        Title="OpenGL Video Frame Renderer"
+        x:Class="OpenGLAvalonia.MainWindow"
+        Width="1380"
+        Height="800">
+	<Grid RowDefinitions="auto,*, auto" ColumnDefinitions="auto, *" Name="MainGrid">
+		<!-- Кнопка для тестирования загрузки кадра -->
+		<Grid Grid.Column="0" Grid.Row="0" RowDefinitions="auto" ColumnDefinitions="auto, auto, *, auto, auto, auto">
+			<Button Grid.Column="0" Grid.Row="0" x:Name="NewButton" Content="📄 New empty playlist" Margin="2,2"/>
+			<Button Grid.Column="1" Grid.Row="0" x:Name="OpenButton" Content="📂 Open playlist JSON file" Margin="2,2"/>
+			<Button Grid.Column="3" Grid.Row="0" x:Name="PlayButton" Content="⏯ Start" Margin="2"/>
+			<Button Grid.Column="4" Grid.Row="0" x:Name="PauseButton" Content="⏸ Pause" Margin="2"/>
+			<Button Grid.Column="5" Grid.Row="0" x:Name="StopButton" Content="⏹︎ Stop" Margin="2"/>
+		</Grid>
+		<components:PlaylistTable Grid.Column="0" Grid.Row="1" DataContext="{Binding PlaylistViewModel}" Name="PlaylistTable1" Margin="0,0,0,10"/>
+		<!-- OpenGL-контрол для отображения видео -->
+		<StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+			<TextBlock x:Name="ConversionStatus" Margin="10,2" VerticalAlignment="Center">Output format will be here</TextBlock>
+			<Button x:Name="SetConversionButton" Content="🎚 Output format" Margin="10,2"/>
+			<!--<ComboBox Name="AudioDriverComboBox"
+                  Width="150"
+                  HorizontalAlignment="Left" PlaceholderText="Audio Driver"
+					  Margin="2"
+                  >
+				<ComboBoxItem Content="Яблоко"/>
+				<ComboBoxItem Content="Банан"/>
+			</ComboBox>
+			<ComboBox Name="AudioDeviceComboBox"
+                  Width="150"
+                  HorizontalAlignment="Left" PlaceholderText="Audio Device"
+					  Margin="2"
+                  >
+				<ComboBoxItem Content="Апельсин"/>
+				<ComboBoxItem Content="Груша"/>
+			</ComboBox>
+			Width="1024" Height="768"
+			-->
+		</StackPanel>
+		<local:OpenGlVideoControl Grid.Column="1" Grid.Row="1" x:Name="GlControl" Width="NaN" Height="NaN" IsVisible="True"/>
+
+		<TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" x:Name="Status" Background="LightGray" Padding="2" Margin="2">Open playlist first</TextBlock>
+	</Grid>
+</Window>

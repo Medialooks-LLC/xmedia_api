@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:local="clr-namespace:OpenGLAvalonia.Components"
+             x:Class="OpenGLAvalonia.Components.ConversionSettingsControl">
+	<StackPanel Margin="10" Spacing="10">
+		<TextBlock Text="Audio Settings" FontWeight="Bold" />
+		<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto">
+			<TextBlock Grid.Row="0" Grid.Column="0" Text="Channels:" Margin="2,0" VerticalAlignment="Center"/>
+			<NumericUpDown IsReadOnly="{Binding IsPlaying}" Grid.Row="0" Grid.Column="1" Value="{Binding AudioChannels}" Minimum="1" Maximum="8" Margin="2"/>
+
+			<TextBlock Grid.Row="1" Grid.Column="0" Text="Sample Rate:"  Margin="2,0" VerticalAlignment="Center"/>
+			<NumericUpDown IsReadOnly="{Binding IsPlaying}" Grid.Row="1" Grid.Column="1" Value="{Binding AudioSampleRate}" Minimum="8000" Maximum="192000" Margin="2"/>
+		</Grid>
+
+		<TextBlock Text="Video Settings" FontWeight="Bold" Margin="0,10,0,0" />
+		<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+			<TextBlock Grid.Row="0" Grid.Column="0" Text="Width:" Margin="2,0" VerticalAlignment="Center"/>
+			<NumericUpDown Grid.Row="0" Grid.Column="1" Value="{Binding VideoWidth}" Minimum="1"  Margin="2"/>
+
+			<TextBlock Grid.Row="1" Grid.Column="0" Text="Height:" Margin="2,0" VerticalAlignment="Center"/>
+			<NumericUpDown Grid.Row="1" Grid.Column="1" Value="{Binding VideoHeight}" Minimum="1"  Margin="2"/>
+
+			<TextBlock Grid.Row="2" Grid.Column="0" Text="Frame Rate:" Margin="2,0" VerticalAlignment="Center"/>
+			<NumericUpDown IsReadOnly="{Binding IsPlaying}" Grid.Row="2" Grid.Column="1" Value="{Binding VideoFrameRate}" Minimum="1" Maximum="120"  Margin="2"/>
+		</Grid>
+
+		<Button IsVisible="False" Content="Generate JSON" Click="OnGenerateJsonClicked" Margin="0,10,0,0" />
+		<TextBox IsVisible="False" Name="JsonOutput" IsReadOnly="True" Height="200" AcceptsReturn="True" />
+	</StackPanel>
+</UserControl>
